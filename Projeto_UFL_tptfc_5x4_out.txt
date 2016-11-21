@@ -1,0 +1,1745 @@
+-----------
+brute force:
+score:13728.0
+facility 3:4 
+facility 4:1 2 
+facility 5:3 
+
+heuristic:
+score:33255.0
+facility 2:2 
+facility 5:1 3 4 
+
+heuristic opt:
+score:33255.0
+facility 2:2 
+facility 5:1 3 4 
+
+-----------
+brute force:
+score:18201.0
+facility 3:1 
+facility 4:3 
+facility 5:2 4 
+
+heuristic:
+score:37714.0
+facility 1:2 
+facility 3:4 
+facility 4:1 3 
+
+heuristic opt:
+score:20504.0
+facility 3:1 4 
+facility 4:2 3 
+
+-----------
+brute force:
+score:26184.0
+facility 1:4 
+facility 2:1 
+facility 3:3 
+facility 5:2 
+
+heuristic:
+score:30646.0
+facility 1:4 
+facility 2:1 2 3 
+
+heuristic opt:
+score:30646.0
+facility 1:4 
+facility 2:1 2 3 
+
+-----------
+brute force:
+score:8796.0
+facility 1:1 
+facility 3:2 
+facility 4:3 4 
+
+heuristic:
+score:11058.0
+facility 1:1 2 4 
+facility 4:3 
+
+heuristic opt:
+score:9394.0
+facility 1:1 2 
+facility 4:3 4 
+
+-----------
+brute force:
+score:25951.0
+facility 3:1 
+facility 4:2 4 
+facility 5:3 
+
+heuristic:
+score:34974.0
+facility 3:1 2 3 
+facility 4:4 
+
+heuristic opt:
+score:26020.0
+facility 3:1 
+facility 4:2 3 4 
+
+-----------
+brute force:
+score:39184.0
+facility 1:4 
+facility 2:3 
+facility 4:2 
+facility 5:1 
+
+heuristic:
+score:48912.0
+facility 2:3 4 
+facility 4:2 
+facility 5:1 
+
+heuristic opt:
+score:48912.0
+facility 2:3 4 
+facility 4:2 
+facility 5:1 
+
+-----------
+brute force:
+score:20958.0
+facility 2:1 2 
+facility 3:3 
+facility 5:4 
+
+heuristic:
+score:22349.0
+facility 2:1 
+facility 3:2 3 4 
+
+heuristic opt:
+score:21315.0
+facility 2:1 2 
+facility 3:3 4 
+
+-----------
+brute force:
+score:19873.0
+facility 3:1 2 
+facility 4:3 
+facility 5:4 
+
+heuristic:
+score:28877.0
+facility 3:1 2 3 
+facility 5:4 
+
+heuristic opt:
+score:21313.0
+facility 3:1 2 
+facility 5:3 4 
+
+-----------
+brute force:
+score:10540.0
+facility 1:4 
+facility 3:3 
+facility 4:2 
+facility 5:1 
+
+heuristic:
+score:16950.0
+facility 2:4 
+facility 5:1 2 3 
+
+heuristic opt:
+score:16950.0
+facility 2:4 
+facility 5:1 2 3 
+
+-----------
+brute force:
+score:2444.0
+facility 2:4 
+facility 3:2 3 
+facility 4:1 
+
+heuristic:
+score:13995.0
+facility 3:3 4 
+facility 4:1 2 
+
+heuristic opt:
+score:13995.0
+facility 3:3 4 
+facility 4:1 2 
+
+-----------
+brute force:
+score:13181.0
+facility 3:2 4 
+facility 4:1 
+facility 5:3 
+
+heuristic:
+score:19671.0
+facility 3:4 
+facility 4:1 2 3 
+
+heuristic opt:
+score:13510.0
+facility 3:2 4 
+facility 4:1 3 
+
+-----------
+brute force:
+score:36485.0
+facility 1:1 3 
+facility 2:2 
+facility 5:4 
+
+heuristic:
+score:47027.0
+facility 2:1 2 
+facility 5:3 4 
+
+heuristic opt:
+score:47027.0
+facility 2:1 2 
+facility 5:3 4 
+
+-----------
+brute force:
+score:36532.0
+facility 3:1 3 
+facility 5:2 4 
+
+heuristic:
+score:46771.0
+facility 5:1 2 3 4 
+
+heuristic opt:
+score:46771.0
+facility 5:1 2 3 4 
+
+-----------
+brute force:
+score:22396.0
+facility 1:2 
+facility 2:3 
+facility 5:1 4 
+
+heuristic:
+score:28721.0
+facility 1:4 
+facility 2:1 
+facility 4:2 3 
+
+heuristic opt:
+score:25858.0
+facility 1:2 4 
+facility 2:1 3 
+
+-----------
+brute force:
+score:10333.0
+facility 3:1 
+facility 4:4 
+facility 5:2 3 
+
+heuristic:
+score:15720.0
+facility 2:2 3 
+facility 4:1 4 
+
+heuristic opt:
+score:14880.0
+facility 2:3 
+facility 4:1 2 4 
+
+-----------
+brute force:
+score:13062.0
+facility 3:4 
+facility 4:1 2 
+facility 5:3 
+
+heuristic:
+score:17498.0
+facility 2:3 
+facility 3:1 2 4 
+
+heuristic opt:
+score:17498.0
+facility 2:3 
+facility 3:1 2 4 
+
+-----------
+brute force:
+score:19084.0
+facility 4:1 3 4 
+facility 5:2 
+
+heuristic:
+score:20451.0
+facility 2:2 
+facility 4:1 3 4 
+
+heuristic opt:
+score:20451.0
+facility 2:2 
+facility 4:1 3 4 
+
+-----------
+brute force:
+score:25564.0
+facility 4:1 3 4 
+facility 5:2 
+
+heuristic:
+score:26706.0
+facility 1:2 
+facility 4:1 3 4 
+
+heuristic opt:
+score:26706.0
+facility 1:2 
+facility 4:1 3 4 
+
+-----------
+brute force:
+score:17084.0
+facility 2:1 2 4 
+facility 5:3 
+
+heuristic:
+score:24231.0
+facility 1:3 
+facility 2:1 2 4 
+
+heuristic opt:
+score:24231.0
+facility 1:3 
+facility 2:1 2 4 
+
+-----------
+brute force:
+score:24176.0
+facility 1:2 3 
+facility 2:1 
+facility 5:4 
+
+heuristic:
+score:43353.0
+facility 1:2 3 
+facility 2:4 
+facility 4:1 
+
+heuristic opt:
+score:29870.0
+facility 1:2 3 
+facility 2:1 4 
+
+-----------
+brute force:
+score:40219.0
+facility 1:2 
+facility 2:3 
+facility 5:1 4 
+
+heuristic:
+score:62539.0
+facility 1:1 
+facility 2:2 3 
+facility 5:4 
+
+heuristic opt:
+score:40219.0
+facility 1:2 
+facility 2:3 
+facility 5:1 4 
+
+-----------
+brute force:
+score:28466.0
+facility 2:1 
+facility 3:2 4 
+facility 5:3 
+
+heuristic:
+score:35285.0
+facility 2:1 
+facility 5:2 3 4 
+
+heuristic opt:
+score:28901.0
+facility 2:1 4 
+facility 5:2 3 
+
+-----------
+brute force:
+score:6377.0
+facility 2:1 
+facility 4:2 
+facility 5:3 4 
+
+heuristic:
+score:25069.0
+facility 1:3 4 
+facility 4:1 2 
+
+heuristic opt:
+score:25069.0
+facility 1:3 4 
+facility 4:1 2 
+
+-----------
+brute force:
+score:17364.0
+facility 2:2 
+facility 4:1 
+facility 5:3 4 
+
+heuristic:
+score:32540.0
+facility 4:1 2 3 4 
+
+heuristic opt:
+score:32540.0
+facility 4:1 2 3 4 
+
+-----------
+brute force:
+score:29592.0
+facility 2:1 4 
+facility 4:2 
+facility 5:3 
+
+heuristic:
+score:42652.0
+facility 4:1 2 3 
+facility 5:4 
+
+heuristic opt:
+score:41196.0
+facility 4:1 2 
+facility 5:3 4 
+
+-----------
+brute force:
+score:22213.0
+facility 1:4 
+facility 3:1 
+facility 5:2 3 
+
+heuristic:
+score:37680.0
+facility 3:1 2 4 
+facility 5:3 
+
+heuristic opt:
+score:27170.0
+facility 3:1 
+facility 5:2 3 4 
+
+-----------
+brute force:
+score:28096.0
+facility 3:2 
+facility 4:3 4 
+facility 5:1 
+
+heuristic:
+score:45695.0
+facility 4:1 2 3 4 
+
+heuristic opt:
+score:45695.0
+facility 4:1 2 3 4 
+
+-----------
+brute force:
+score:4112.0
+facility 3:4 
+facility 4:1 2 3 
+
+heuristic:
+score:4112.0
+facility 3:4 
+facility 4:1 2 3 
+
+heuristic opt:
+score:4112.0
+facility 3:4 
+facility 4:1 2 3 
+
+-----------
+brute force:
+score:16169.0
+facility 3:1 4 
+facility 4:3 
+facility 5:2 
+
+heuristic:
+score:29233.0
+facility 2:2 
+facility 3:1 4 
+facility 5:3 
+
+heuristic opt:
+score:25311.0
+facility 3:1 4 
+facility 5:2 3 
+
+-----------
+brute force:
+score:26486.0
+facility 4:2 3 4 
+facility 5:1 
+
+heuristic:
+score:62915.0
+facility 1:3 4 
+facility 2:2 
+facility 5:1 
+
+heuristic opt:
+score:56903.0
+facility 1:4 
+facility 5:1 2 3 
+
+-----------
+brute force:
+score:14704.0
+facility 1:2 
+facility 2:4 
+facility 4:3 
+facility 5:1 
+
+heuristic:
+score:31367.0
+facility 4:4 
+facility 5:1 2 3 
+
+heuristic opt:
+score:18041.0
+facility 4:2 3 4 
+facility 5:1 
+
+-----------
+brute force:
+score:17761.0
+facility 2:2 4 
+facility 3:3 
+facility 4:1 
+
+heuristic:
+score:21515.0
+facility 2:2 
+facility 4:1 3 4 
+
+heuristic opt:
+score:19051.0
+facility 2:2 4 
+facility 4:1 3 
+
+-----------
+brute force:
+score:33093.0
+facility 3:4 
+facility 4:1 2 
+facility 5:3 
+
+heuristic:
+score:40460.0
+facility 4:1 
+facility 5:2 3 4 
+
+heuristic opt:
+score:33208.0
+facility 4:1 2 
+facility 5:3 4 
+
+-----------
+brute force:
+score:22497.0
+facility 2:1 
+facility 3:2 4 
+facility 5:3 
+
+heuristic:
+score:29386.0
+facility 2:1 
+facility 3:2 3 4 
+
+heuristic opt:
+score:29386.0
+facility 2:1 
+facility 3:2 3 4 
+
+-----------
+brute force:
+score:16646.0
+facility 2:1 4 
+facility 3:3 
+facility 5:2 
+
+heuristic:
+score:20063.0
+facility 2:1 
+facility 3:3 4 
+facility 5:2 
+
+heuristic opt:
+score:16646.0
+facility 2:1 4 
+facility 3:3 
+facility 5:2 
+
+-----------
+brute force:
+score:10927.0
+facility 2:1 
+facility 3:4 
+facility 4:2 
+facility 5:3 
+
+heuristic:
+score:34560.0
+facility 2:1 3 
+facility 3:2 4 
+
+heuristic opt:
+score:34560.0
+facility 2:1 3 
+facility 3:2 4 
+
+-----------
+brute force:
+score:25703.0
+facility 2:1 2 
+facility 3:4 
+facility 4:3 
+
+heuristic:
+score:46659.0
+facility 3:1 4 
+facility 4:2 3 
+
+heuristic opt:
+score:46659.0
+facility 3:1 4 
+facility 4:2 3 
+
+-----------
+brute force:
+score:11170.0
+facility 1:3 
+facility 4:2 
+facility 5:1 4 
+
+heuristic:
+score:12417.0
+facility 1:2 3 
+facility 5:1 4 
+
+heuristic opt:
+score:12375.0
+facility 1:3 
+facility 5:1 2 4 
+
+-----------
+brute force:
+score:19471.0
+facility 2:1 
+facility 4:2 4 
+facility 5:3 
+
+heuristic:
+score:38413.0
+facility 1:4 
+facility 3:1 
+facility 4:2 3 
+
+heuristic opt:
+score:31399.0
+facility 4:1 2 3 4 
+
+-----------
+brute force:
+score:19192.0
+facility 2:1 
+facility 4:2 3 4 
+
+heuristic:
+score:19192.0
+facility 2:1 
+facility 4:2 3 4 
+
+heuristic opt:
+score:19192.0
+facility 2:1 
+facility 4:2 3 4 
+
+-----------
+brute force:
+score:22185.0
+facility 1:2 
+facility 2:1 
+facility 4:3 
+facility 5:4 
+
+heuristic:
+score:31703.0
+facility 1:2 
+facility 2:1 
+facility 4:3 4 
+
+heuristic opt:
+score:31703.0
+facility 1:2 
+facility 2:1 
+facility 4:3 4 
+
+-----------
+brute force:
+score:12340.0
+facility 2:3 
+facility 3:1 2 4 
+
+heuristic:
+score:33454.0
+facility 3:1 3 
+facility 5:2 4 
+
+heuristic opt:
+score:20177.0
+facility 3:1 2 3 4 
+
+-----------
+brute force:
+score:38447.0
+facility 3:1 
+facility 5:2 3 4 
+
+heuristic:
+score:47127.0
+facility 3:1 4 
+facility 4:2 
+facility 5:3 
+
+heuristic opt:
+score:38447.0
+facility 3:1 
+facility 5:2 3 4 
+
+-----------
+brute force:
+score:33891.0
+facility 1:3 
+facility 2:4 
+facility 3:1 
+facility 5:2 
+
+heuristic:
+score:56753.0
+facility 2:1 4 
+facility 5:2 3 
+
+heuristic opt:
+score:56753.0
+facility 2:1 4 
+facility 5:2 3 
+
+-----------
+brute force:
+score:22915.0
+facility 2:2 
+facility 4:3 
+facility 5:1 4 
+
+heuristic:
+score:36319.0
+facility 4:2 3 
+facility 5:1 4 
+
+heuristic opt:
+score:36319.0
+facility 4:2 3 
+facility 5:1 4 
+
+-----------
+brute force:
+score:9891.0
+facility 1:2 
+facility 2:3 
+facility 5:1 4 
+
+heuristic:
+score:17122.0
+facility 1:2 
+facility 5:1 3 4 
+
+heuristic opt:
+score:17122.0
+facility 1:2 
+facility 5:1 3 4 
+
+-----------
+brute force:
+score:36871.0
+facility 1:2 
+facility 2:3 
+facility 4:1 
+facility 5:4 
+
+heuristic:
+score:52917.0
+facility 2:3 
+facility 5:1 2 4 
+
+heuristic opt:
+score:44067.0
+facility 2:1 3 
+facility 5:2 4 
+
+-----------
+brute force:
+score:25344.0
+facility 3:4 
+facility 4:1 2 
+facility 5:3 
+
+heuristic:
+score:34987.0
+facility 3:3 4 
+facility 5:1 2 
+
+heuristic opt:
+score:27868.0
+facility 3:4 
+facility 5:1 2 3 
+
+-----------
+brute force:
+score:13095.0
+facility 1:3 
+facility 2:1 
+facility 3:2 
+facility 5:4 
+
+heuristic:
+score:17573.0
+facility 3:1 2 3 
+facility 4:4 
+
+heuristic opt:
+score:17075.0
+facility 3:1 2 
+facility 4:3 4 
+
+-----------
+brute force:
+score:15057.0
+facility 1:4 
+facility 2:3 
+facility 4:1 
+facility 5:2 
+
+heuristic:
+score:23575.0
+facility 2:3 
+facility 5:1 2 4 
+
+heuristic opt:
+score:23575.0
+facility 2:3 
+facility 5:1 2 4 
+
+-----------
+brute force:
+score:31292.0
+facility 1:1 
+facility 2:2 
+facility 5:3 4 
+
+heuristic:
+score:32138.0
+facility 2:2 
+facility 5:1 3 4 
+
+heuristic opt:
+score:32138.0
+facility 2:2 
+facility 5:1 3 4 
+
+-----------
+brute force:
+score:28766.0
+facility 2:1 3 
+facility 3:2 
+facility 5:4 
+
+heuristic:
+score:39017.0
+facility 1:2 
+facility 2:1 
+facility 5:3 4 
+
+heuristic opt:
+score:38489.0
+facility 1:2 
+facility 2:1 3 
+facility 5:4 
+
+-----------
+brute force:
+score:19661.0
+facility 3:4 
+facility 4:1 
+facility 5:2 3 
+
+heuristic:
+score:20376.0
+facility 3:2 3 4 
+facility 4:1 
+
+heuristic opt:
+score:20376.0
+facility 3:2 3 4 
+facility 4:1 
+
+-----------
+brute force:
+score:15208.0
+facility 2:1 
+facility 3:2 
+facility 4:3 
+facility 5:4 
+
+heuristic:
+score:41575.0
+facility 3:2 4 
+facility 4:1 3 
+
+heuristic opt:
+score:41575.0
+facility 3:2 4 
+facility 4:1 3 
+
+-----------
+brute force:
+score:9412.0
+facility 1:1 
+facility 2:4 
+facility 3:3 
+facility 4:2 
+
+heuristic:
+score:19984.0
+facility 3:1 3 
+facility 4:2 4 
+
+heuristic opt:
+score:19984.0
+facility 3:1 3 
+facility 4:2 4 
+
+-----------
+brute force:
+score:27480.0
+facility 1:3 
+facility 3:4 
+facility 5:1 2 
+
+heuristic:
+score:56839.0
+facility 1:3 4 
+facility 2:1 
+facility 3:2 
+
+heuristic opt:
+score:38207.0
+facility 1:3 
+facility 2:1 
+facility 3:2 4 
+
+-----------
+brute force:
+score:39320.0
+facility 3:1 
+facility 4:4 
+facility 5:2 3 
+
+heuristic:
+score:68627.0
+facility 1:4 
+facility 3:1 3 
+facility 5:2 
+
+heuristic opt:
+score:58495.0
+facility 1:4 
+facility 3:1 
+facility 5:2 3 
+
+-----------
+brute force:
+score:7226.0
+facility 2:1 2 3 
+facility 4:4 
+
+heuristic:
+score:7226.0
+facility 2:1 2 3 
+facility 4:4 
+
+heuristic opt:
+score:7226.0
+facility 2:1 2 3 
+facility 4:4 
+
+-----------
+brute force:
+score:21367.0
+facility 2:4 
+facility 4:2 
+facility 5:1 3 
+
+heuristic:
+score:25507.0
+facility 1:3 
+facility 2:4 
+facility 5:1 2 
+
+heuristic opt:
+score:22429.0
+facility 2:4 
+facility 5:1 2 3 
+
+-----------
+brute force:
+score:13738.0
+facility 2:4 
+facility 3:1 
+facility 4:2 3 
+
+heuristic:
+score:18659.0
+facility 1:1 
+facility 2:3 4 
+facility 4:2 
+
+heuristic opt:
+score:14243.0
+facility 1:1 
+facility 2:4 
+facility 4:2 3 
+
+-----------
+brute force:
+score:13921.0
+facility 3:2 
+facility 4:1 4 
+facility 5:3 
+
+heuristic:
+score:21458.0
+facility 3:2 4 
+facility 5:1 3 
+
+heuristic opt:
+score:18950.0
+facility 3:2 
+facility 5:1 3 4 
+
+-----------
+brute force:
+score:17190.0
+facility 1:1 3 
+facility 3:4 
+facility 5:2 
+
+heuristic:
+score:31450.0
+facility 1:4 
+facility 2:1 2 
+facility 5:3 
+
+heuristic opt:
+score:23596.0
+facility 1:1 3 4 
+facility 5:2 
+
+-----------
+brute force:
+score:26838.0
+facility 2:1 4 
+facility 5:2 3 
+
+heuristic:
+score:30938.0
+facility 2:1 
+facility 4:3 4 
+facility 5:2 
+
+heuristic opt:
+score:26838.0
+facility 2:1 4 
+facility 5:2 3 
+
+-----------
+brute force:
+score:5083.0
+facility 2:1 4 
+facility 3:2 3 
+
+heuristic:
+score:18107.0
+facility 2:1 3 4 
+facility 5:2 
+
+heuristic opt:
+score:15751.0
+facility 2:1 4 
+facility 5:2 3 
+
+-----------
+brute force:
+score:23060.0
+facility 5:1 2 3 4 
+
+heuristic:
+score:23060.0
+facility 5:1 2 3 4 
+
+heuristic opt:
+score:23060.0
+facility 5:1 2 3 4 
+
+-----------
+brute force:
+score:17487.0
+facility 1:4 
+facility 5:1 2 3 
+
+heuristic:
+score:32128.0
+facility 1:1 2 4 
+facility 3:3 
+
+heuristic opt:
+score:32128.0
+facility 1:1 2 4 
+facility 3:3 
+
+-----------
+brute force:
+score:7999.0
+facility 2:1 
+facility 3:3 
+facility 4:2 4 
+
+heuristic:
+score:8300.0
+facility 2:1 
+facility 3:3 4 
+facility 4:2 
+
+heuristic opt:
+score:7999.0
+facility 2:1 
+facility 3:3 
+facility 4:2 4 
+
+-----------
+brute force:
+score:4198.0
+facility 2:4 
+facility 3:3 
+facility 4:1 
+facility 5:2 
+
+heuristic:
+score:14007.0
+facility 1:4 
+facility 3:1 2 3 
+
+heuristic opt:
+score:14007.0
+facility 1:4 
+facility 3:1 2 3 
+
+-----------
+brute force:
+score:15448.0
+facility 2:3 
+facility 3:2 4 
+facility 5:1 
+
+heuristic:
+score:19516.0
+facility 2:1 2 3 
+facility 3:4 
+
+heuristic opt:
+score:16436.0
+facility 2:1 3 
+facility 3:2 4 
+
+-----------
+brute force:
+score:17157.0
+facility 2:1 
+facility 3:3 
+facility 4:2 
+facility 5:4 
+
+heuristic:
+score:31628.0
+facility 2:1 3 
+facility 3:2 4 
+
+heuristic opt:
+score:30634.0
+facility 2:1 
+facility 3:2 3 4 
+
+-----------
+brute force:
+score:19943.0
+facility 2:3 
+facility 3:2 
+facility 5:1 4 
+
+heuristic:
+score:47912.0
+facility 1:2 4 
+facility 3:3 
+facility 5:1 
+
+heuristic opt:
+score:21172.0
+facility 3:2 
+facility 5:1 3 4 
+
+-----------
+brute force:
+score:14890.0
+facility 1:4 
+facility 4:3 
+facility 5:1 2 
+
+heuristic:
+score:23410.0
+facility 4:3 
+facility 5:1 2 4 
+
+heuristic opt:
+score:23410.0
+facility 4:3 
+facility 5:1 2 4 
+
+-----------
+brute force:
+score:7002.0
+facility 2:1 2 3 
+facility 3:4 
+
+heuristic:
+score:12436.0
+facility 2:2 
+facility 3:3 
+facility 4:1 4 
+
+heuristic opt:
+score:7002.0
+facility 2:1 2 3 
+facility 3:4 
+
+-----------
+brute force:
+score:28159.0
+facility 1:3 
+facility 3:4 
+facility 4:1 
+facility 5:2 
+
+heuristic:
+score:45143.0
+facility 1:3 
+facility 3:1 
+facility 5:2 4 
+
+heuristic opt:
+score:34951.0
+facility 1:3 
+facility 3:1 4 
+facility 5:2 
+
+-----------
+brute force:
+score:14280.0
+facility 1:3 
+facility 3:2 
+facility 5:1 4 
+
+heuristic:
+score:36669.0
+facility 1:1 2 3 
+facility 2:4 
+
+heuristic opt:
+score:36669.0
+facility 1:1 2 3 
+facility 2:4 
+
+-----------
+brute force:
+score:3268.0
+facility 2:2 
+facility 3:1 3 
+facility 4:4 
+
+heuristic:
+score:5342.0
+facility 2:2 
+facility 4:1 3 4 
+
+heuristic opt:
+score:5342.0
+facility 2:2 
+facility 4:1 3 4 
+
+-----------
+brute force:
+score:12521.0
+facility 4:1 3 
+facility 5:2 4 
+
+heuristic:
+score:34508.0
+facility 4:1 2 3 4 
+
+heuristic opt:
+score:34508.0
+facility 4:1 2 3 4 
+
+-----------
+brute force:
+score:22734.0
+facility 2:2 3 
+facility 3:4 
+facility 5:1 
+
+heuristic:
+score:31383.0
+facility 3:2 4 
+facility 4:1 3 
+
+heuristic opt:
+score:31334.0
+facility 3:2 3 4 
+facility 4:1 
+
+-----------
+brute force:
+score:37380.0
+facility 1:2 
+facility 2:3 
+facility 4:4 
+facility 5:1 
+
+heuristic:
+score:40874.0
+facility 2:3 
+facility 4:1 2 4 
+
+heuristic opt:
+score:40874.0
+facility 2:3 
+facility 4:1 2 4 
+
+-----------
+brute force:
+score:13626.0
+facility 1:4 
+facility 3:1 
+facility 5:2 3 
+
+heuristic:
+score:34478.0
+facility 4:2 
+facility 5:1 3 4 
+
+heuristic opt:
+score:25030.0
+facility 5:1 2 3 4 
+
+-----------
+brute force:
+score:32920.0
+facility 5:1 2 3 4 
+
+heuristic:
+score:50082.0
+facility 2:1 3 4 
+facility 5:2 
+
+heuristic opt:
+score:32920.0
+facility 5:1 2 3 4 
+
+-----------
+brute force:
+score:16998.0
+facility 2:4 
+facility 4:1 
+facility 5:2 3 
+
+heuristic:
+score:20664.0
+facility 3:4 
+facility 5:1 2 3 
+
+heuristic opt:
+score:20664.0
+facility 3:4 
+facility 5:1 2 3 
+
+-----------
+brute force:
+score:19051.0
+facility 1:2 3 
+facility 2:4 
+facility 5:1 
+
+heuristic:
+score:26543.0
+facility 1:1 2 3 
+facility 4:4 
+
+heuristic opt:
+score:28711.0
+facility 1:1 2 3 
+facility 3:4 
+
+-----------
+brute force:
+score:33470.0
+facility 2:2 
+facility 4:3 
+facility 5:1 4 
+
+heuristic:
+score:40555.0
+facility 4:2 3 4 
+facility 5:1 
+
+heuristic opt:
+score:34147.0
+facility 4:3 
+facility 5:1 2 4 
+
+-----------
+brute force:
+score:12822.0
+facility 2:1 
+facility 3:4 
+facility 5:2 3 
+
+heuristic:
+score:13489.0
+facility 2:1 3 4 
+facility 5:2 
+
+heuristic opt:
+score:13167.0
+facility 2:1 4 
+facility 5:2 3 
+
+-----------
+brute force:
+score:32317.0
+facility 1:2 
+facility 4:1 4 
+facility 5:3 
+
+heuristic:
+score:41929.0
+facility 2:3 
+facility 3:4 
+facility 4:1 2 
+
+heuristic opt:
+score:37586.0
+facility 2:3 
+facility 4:1 2 4 
+
+-----------
+brute force:
+score:10651.0
+facility 1:1 4 
+facility 4:3 
+facility 5:2 
+
+heuristic:
+score:12351.0
+facility 1:1 4 
+facility 4:2 3 
+
+heuristic opt:
+score:12351.0
+facility 1:1 4 
+facility 4:2 3 
+
+-----------
+brute force:
+score:13019.0
+facility 1:2 
+facility 2:3 
+facility 3:1 4 
+
+heuristic:
+score:22402.0
+facility 1:2 4 
+facility 3:1 3 
+
+heuristic opt:
+score:20840.0
+facility 1:2 
+facility 3:1 3 4 
+
+-----------
+brute force:
+score:9308.0
+facility 1:2 
+facility 3:1 3 
+facility 5:4 
+
+heuristic:
+score:12432.0
+facility 3:1 2 3 4 
+
+heuristic opt:
+score:12432.0
+facility 3:1 2 3 4 
+
+-----------
+brute force:
+score:19618.0
+facility 1:1 
+facility 2:2 
+facility 4:3 
+facility 5:4 
+
+heuristic:
+score:32723.0
+facility 1:1 2 
+facility 2:4 
+facility 3:3 
+
+heuristic opt:
+score:26425.0
+facility 1:1 
+facility 2:2 4 
+facility 3:3 
+
+-----------
+brute force:
+score:21564.0
+facility 1:4 
+facility 5:1 2 3 
+
+heuristic:
+score:26926.0
+facility 5:1 2 3 4 
+
+heuristic opt:
+score:26926.0
+facility 5:1 2 3 4 
+
+-----------
+brute force:
+score:12393.0
+facility 1:1 
+facility 2:2 3 
+facility 5:4 
+
+heuristic:
+score:15602.0
+facility 2:3 
+facility 5:1 2 4 
+
+heuristic opt:
+score:16954.0
+facility 3:3 
+facility 5:1 2 4 
+
+-----------
+brute force:
+score:7941.0
+facility 1:1 
+facility 2:4 
+facility 3:2 
+facility 4:3 
+
+heuristic:
+score:15448.0
+facility 2:1 4 
+facility 4:2 3 
+
+heuristic opt:
+score:15448.0
+facility 2:1 4 
+facility 4:2 3 
+
+-----------
+brute force:
+score:16674.0
+facility 1:2 
+facility 2:1 3 
+facility 3:4 
+
+heuristic:
+score:22549.0
+facility 2:1 3 
+facility 3:2 4 
+
+heuristic opt:
+score:22549.0
+facility 2:1 3 
+facility 3:2 4 
+
+-----------
+brute force:
+score:19442.0
+facility 2:4 
+facility 3:2 
+facility 5:1 3 
+
+heuristic:
+score:44845.0
+facility 2:1 2 4 
+facility 4:3 
+
+heuristic opt:
+score:43155.0
+facility 2:1 4 
+facility 4:2 3 
+
+-----------
+brute force:
+score:10584.0
+facility 3:1 3 4 
+facility 4:2 
+
+heuristic:
+score:14318.0
+facility 3:1 3 4 
+facility 5:2 
+
+heuristic opt:
+score:14318.0
+facility 3:1 3 4 
+facility 5:2 
+
+-----------
+brute force:
+score:22382.0
+facility 3:1 4 
+facility 4:2 
+facility 5:3 
+
+heuristic:
+score:42415.0
+facility 2:1 
+facility 5:2 3 4 
+
+heuristic opt:
+score:41837.0
+facility 5:1 2 3 4 
+
+-----------
+brute force:
+score:29505.0
+facility 2:1 4 
+facility 4:2 3 
+
+heuristic:
+score:50946.0
+facility 1:4 
+facility 3:1 3 
+facility 4:2 
+
+heuristic opt:
+score:31206.0
+facility 4:1 2 3 4 
+
+-----------
+brute force:
+score:28670.0
+facility 2:1 
+facility 3:4 
+facility 4:3 
+facility 5:2 
+
+heuristic:
+score:41918.0
+facility 2:1 
+facility 3:2 4 
+facility 5:3 
+
+heuristic opt:
+score:35045.0
+facility 2:1 
+facility 3:4 
+facility 5:2 3 
+
+-----------
+brute force:
+score:35749.0
+facility 1:1 
+facility 2:3 
+facility 3:2 
+facility 5:4 
+
+heuristic:
+score:51806.0
+facility 1:1 2 
+facility 2:3 4 
+
+heuristic opt:
+score:51806.0
+facility 1:1 2 
+facility 2:3 4 
+
+-----------
+brute force:
+score:35749.0
+facility 1:1 
+facility 2:3 
+facility 3:2 
+facility 5:4 
+
+heuristic:
+score:51806.0
+facility 1:1 2 
+facility 2:3 4 
+
+heuristic opt:
+score:51806.0
+facility 1:1 2 
+facility 2:3 4 
+
+########################################################
+brute force:  2020531.0
+heuristic:    3116605.0
+heuristic opt:2762991.0
+
+media brute force:  20005.257425742573
+media heuristic:    30857.47524752475
+media heuristic opt:27356.346534653465
+
+score heuristic:    1.5424682917510297
+score heuristic opt:1.3674578613245727

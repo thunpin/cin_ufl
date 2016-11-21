@@ -27,9 +27,10 @@ public class Ufl_tptfc {
 		
 		int totalExecution = 0;
 		
-		final String index = "4x7";
-		final String fileNameIn = String.format("Projeto_UFL_tptfc_%s_inputs.txt", index);
-		final String fileNameOut = String.format("Projeto_UFL_tptfc_%s_out.txt", index);
+		final int numberOfFacilities = Integer.parseInt(args[0]);
+		final int numberOfClients = Integer.parseInt(args[1]);
+		final String fileNameIn = String.format("Projeto_UFL_tptfc_%sx%s_inputs.txt", numberOfFacilities, numberOfClients);
+		final String fileNameOut = String.format("Projeto_UFL_tptfc_%sx%s_out.txt", numberOfFacilities, numberOfClients);
 		
 		List<String> list = new ArrayList<>();
 //		try (BufferedReader br = Files.newBufferedReader(Paths.get(Ufl_tptfc.class.getResource("test.txt").getPath()))) {

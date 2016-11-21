@@ -15,8 +15,8 @@ public class CreateOutput {
 	
 	public static void main(String[] args) throws IOException {
 		final int numberOfExamples = 100;
-		final int numberOfFacilities = 4;
-		final int numberOfClients = 7;
+		final int numberOfFacilities = Integer.parseInt(args[0]);
+		final int numberOfClients = Integer.parseInt(args[1]);
 		final String fileName = String.format("Projeto_UFL_tptfc_%sx%s_inputs.txt", numberOfFacilities, numberOfClients);
 		
 		final List<String> lines = new LinkedList<>();
