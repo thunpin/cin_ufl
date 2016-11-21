@@ -20,11 +20,11 @@ public class UflBruteForce extends Ufl {
 	
 	private void exec(int pos) {
 		if (pos < currentUse.length) {
-			currentUse[pos] = 1;
+			currentUse[pos] = ON;
 			verifyMin(currentUse);
 			exec(pos+1);
 			
-			currentUse[pos] = 0;
+			currentUse[pos] = OFF;
 			exec(pos+1);
 		}
 	}

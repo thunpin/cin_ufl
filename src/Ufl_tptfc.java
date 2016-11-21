@@ -33,7 +33,6 @@ public class Ufl_tptfc {
 		final String fileNameOut = String.format("Projeto_UFL_tptfc_%sx%s_out.txt", numberOfFacilities, numberOfClients);
 		
 		List<String> list = new ArrayList<>();
-//		try (BufferedReader br = Files.newBufferedReader(Paths.get(Ufl_tptfc.class.getResource("test.txt").getPath()))) {
 		try (BufferedReader br = Files.newBufferedReader(Paths.get(fileNameIn))) {
 
 			//br returns as stream and convert it into a List

@@ -3,13 +3,13 @@ import java.util.Date;
 public class Test {	
 	public static void main(String[] args) {
 		Date date1 = new Date();
-		int[][] tt = new int[4][4];
-		b(tt, 0, 0);
+//		int[][] tt = new int[4][4];
+//		b(tt, 0, 0);
 		Date date2 = new Date();
 		System.out.println(date2.getTime()-date1.getTime());
 		
 		date1 = new Date();
-		int[] t = new int[16];
+		int[] t = new int[33];
 		a(t, 0);
 		date2 = new Date();
 		System.out.println(date2.getTime()-date1.getTime());
