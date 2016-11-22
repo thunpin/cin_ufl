@@ -10,7 +10,7 @@ public class UflHeuristic extends Ufl {
 	protected final Map<Integer, Integer> consumerMap = new HashMap<>();
 	protected int freeConsumers;
 	
-	public UflHeuristic(int[] facilities, int[] consumers, int[][] weight) {
+	public UflHeuristic(double[] facilities, double[] consumers, double[][] weight) {
 		super(facilities, consumers, weight);
 		
 		// initialize the free consumers with the max number of consumers

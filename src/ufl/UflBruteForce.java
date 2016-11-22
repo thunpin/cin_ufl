@@ -6,7 +6,7 @@ public class UflBruteForce extends Ufl {
 	private UflResult result;
 	private final int[] currentUse;
 	
-	public UflBruteForce(int[] facilities, int[] consumers, int[][] distance) {
+	public UflBruteForce(double[] facilities, double[] consumers, double[][] distance) {
 		super(facilities, consumers, distance);
 		result = new UflResult(Float.MAX_VALUE, new HashMap<>());
 		currentUse = new int[this.facilities.length * this.consumers.length];

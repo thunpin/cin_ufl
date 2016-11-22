@@ -7,7 +7,7 @@ import org.paukov.combinatorics3.Generator;
 
 public class UflBruteForceNew extends Ufl {
 	
-	public UflBruteForceNew(int[] facilities, int[] consumers, int[][] weight) {
+	public UflBruteForceNew(double[] facilities, double[] consumers, double[][] weight) {
 		super(facilities, consumers, weight);
 	}
 
@@ -23,7 +23,7 @@ public class UflBruteForceNew extends Ufl {
 		for (List<Integer> subSet: Generator.subset(facilitiesPos).simple()) {
 			this.use = new int[this.facilities.length][this.consumers.length];
 			
-			int[] demand = consumers.clone();
+			double[] demand = consumers.clone();
 			List<Integer> conflicts = new LinkedList<>();
 			for (int j = 0; j < this.consumers.length; j++) {
 				int numConflicts = 0;

@@ -6,24 +6,24 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class Ufl {
-	protected final static int EMPTY = 0;
+	protected final static double EMPTY = 0;
 	protected final static int ON = 1;
 	protected final static int OFF = 0;
-	protected final static int NO_PATH = 9999;
+	protected final static double NO_PATH = 9999;
 	
-	protected final int[] facilities;
-	protected final int[] consumers;
-	protected final int[][] weight;
+	protected final double[] facilities;
+	protected final double[] consumers;
+	protected final double[][] weight;
 	
-	protected int[] open;
+	protected double[] open;
 	protected int[][] use;
 	
-	public Ufl(int[] facilities, int[] consumers, int[][] weight) {
+	public Ufl(double[] facilities, double[] consumers, double[][] weight) {
 		this.facilities = facilities.clone();
 		this.consumers = consumers.clone();
 		this.weight = weight.clone();
 		
-		this.open = new int[facilities.length];
+		this.open = new double[facilities.length];
 		this.use = new int[facilities.length][consumers.length];
 	}
 	
@@ -35,8 +35,8 @@ public abstract class Ufl {
 	
 	protected double avaliate(boolean testDemand) {		
 		float result = 0;
-		int[] demand = consumers.clone();
-		this.open = new int[this.facilities.length];
+		double[] demand = consumers.clone();
+		this.open = new double[this.facilities.length];
 		
 		for (int i = 0; i < weight.length; i++) {
 			for (int j = 0; j < weight[i].length; j++) {
@@ -78,26 +78,26 @@ public abstract class Ufl {
 		return new UflResult(currentScore, currentLinks);
 	}
 
-	protected boolean isValidateDemand(int[] demand) {
+	protected boolean isValidateDemand(double[] demand) {
 		// validate the demand
-		int total = 0;
-		for (int value : demand) {
+		double total = 0;
+		for (double value : demand) {
 			total += value;
 		}
 		
 		return total == EMPTY;
 	}
 
-//	int count = 0;
-//	private void debug(float result, int[] demand) {
+//	double count = 0;
+//	private void debug(float result, double[] demand) {
 //		boolean on = true;
-//		for (int i = 0; i < use[1].length; i++) {
+//		for (double i = 0; i < use[1].length; i++) {
 //			if (use[2][i] == OFF) {
 //				on = false;
 //			}
 //		}
-////		for (int i = 0; i < weight.length; i++) {
-////			for (int j = 0; j < weight[i].length; j++) {
+////		for (double i = 0; i < weight.length; i++) {
+////			for (double j = 0; j < weight[i].length; j++) {
 ////				if (use[i][j] == OFF) {
 ////					on = false;
 ////				}
@@ -105,19 +105,19 @@ public abstract class Ufl {
 ////		}
 //		
 //		if (isValidateDemand(demand) && on ) {
-//			System.out.println(count++);
+//			System.out.prdoubleln(count++);
 //			float a = 0;
-//			for (int i = 0; i < weight.length; i++) {
-//				for (int j = 0; j < weight[i].length; j++) {
+//			for (double i = 0; i < weight.length; i++) {
+//				for (double j = 0; j < weight[i].length; j++) {
 //					a += weight[i][j] * use[i][j];
-//					System.out.print(weight[i][j] + "-" + use[i][j] + "    ");
+//					System.out.prdouble(weight[i][j] + "-" + use[i][j] + "    ");
 //				}
-//				System.out.println();
+//				System.out.prdoubleln();
 //			}
-//			System.out.println();
-//			System.out.println(a + " " + result + " ");
-//			System.out.println(open[0] + " " + " " + open[1] + " " + open[2]);
-//			System.out.println("--------------");
+//			System.out.prdoubleln();
+//			System.out.prdoubleln(a + " " + result + " ");
+//			System.out.prdoubleln(open[0] + " " + " " + open[1] + " " + open[2]);
+//			System.out.prdoubleln("--------------");
 //		}
 //	}
 }

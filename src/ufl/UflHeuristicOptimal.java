@@ -1,7 +1,7 @@
 package ufl;
 
 public class UflHeuristicOptimal extends UflHeuristic {
-	public UflHeuristicOptimal(int[] facilities, int[] consumers, int[][] weight) {
+	public UflHeuristicOptimal(double[] facilities, double[] consumers, double[][] weight) {
 		super(facilities, consumers, weight);
 	}
 
