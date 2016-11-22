@@ -2,20 +2,20 @@ package ufl;
 
 public class Score {
 	private final int index;
-	private float score;
+	private double score;
 	
 	public Score(final int index) {
 		this.index = index;
 	}
 	
-	public void add(float value) {
+	public void add(double value) {
 		this.score += value;
 	}
 	
 	public int getIndex() {
 		return index;
 	}
-	public Float getScore() {
+	public Double getScore() {
 		return score;
 	}
 }

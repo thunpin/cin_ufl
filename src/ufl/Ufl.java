@@ -29,11 +29,11 @@ public abstract class Ufl {
 	
 	public abstract UflResult exec();
 	
-	protected float avaliate() {
+	protected double avaliate() {
 		return avaliate(false);
 	}
 	
-	protected float avaliate(boolean testDemand) {		
+	protected double avaliate(boolean testDemand) {		
 		float result = 0;
 		int[] demand = consumers.clone();
 		this.open = new int[this.facilities.length];
@@ -60,7 +60,7 @@ public abstract class Ufl {
 		return result;
 	}
 	
-	protected UflResult createResult(float currentScore) {
+	protected UflResult createResult(double currentScore) {
 		final Map<Integer, List<Integer>> currentLinks = new HashMap<>();
 		for (int i = 0; i < this.use.length; i++) {
 			for (int j = 0; j < this.use[i].length; j++) {
@@ -78,7 +78,7 @@ public abstract class Ufl {
 		return new UflResult(currentScore, currentLinks);
 	}
 
-	private boolean isValidateDemand(int[] demand) {
+	protected boolean isValidateDemand(int[] demand) {
 		// validate the demand
 		int total = 0;
 		for (int value : demand) {

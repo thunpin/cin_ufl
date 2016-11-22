@@ -31,7 +31,7 @@ public class UflBruteForce extends Ufl {
 	
 	protected void verifyMin(int[] currentUse) {
 		if (parseToUse(currentUse)) {
-			float currentScore = avaliate(true);
+			double currentScore = avaliate(true);
 			if (result.getScore() > currentScore) {			
 				result = createResult(currentScore);
 			}

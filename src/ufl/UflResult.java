@@ -5,10 +5,10 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class UflResult {
-	private final float score;
+	private final double score;
 	private final Map<Integer, List<Integer>> links;
 	
-	public UflResult(float score, Map<Integer, List<Integer>> links) {
+	public UflResult(double score, Map<Integer, List<Integer>> links) {
 		super();
 		this.score = score;
 		this.links = links;
@@ -30,7 +30,7 @@ public class UflResult {
 		return builder.toString();
 	}
 
-	public float getScore() {
+	public double getScore() {
 		return score;
 	}
 	public Map<Integer, List<Integer>> getLinks() {

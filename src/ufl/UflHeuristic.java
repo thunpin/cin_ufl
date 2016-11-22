@@ -50,10 +50,10 @@ public class UflHeuristic extends Ufl {
 	protected int getBestFacilityToOpen(int index) {
 		// find facility with the smallest cost
 		int facilityIndex = 0;
-		float facilityValue = Float.MAX_VALUE;
+		double facilityValue = Float.MAX_VALUE;
 		for (int i = 0; i < this.facilities.length; i++) {
 			if (this.weight[i][index] != NO_PATH) {
-				float maxFacilityValue = getMaxFacilityValue(i);
+				double maxFacilityValue = getMaxFacilityValue(i);
 				if (facilityValue > maxFacilityValue) {
 					facilityValue = maxFacilityValue;
 					facilityIndex = i;
@@ -64,7 +64,7 @@ public class UflHeuristic extends Ufl {
 		return facilityIndex;
 	}
 
-	protected float getMaxFacilityValue(int i) {
+	protected double getMaxFacilityValue(int i) {
 		int[][] tempUse = this.use.clone();
 		this.use = new int[this.facilities.length][this.consumers.length];
 		
@@ -74,7 +74,7 @@ public class UflHeuristic extends Ufl {
 			}
 		}
 		
-		float currentFacilityValue = this.avaliate();
+		double currentFacilityValue = this.avaliate();
 		for (int j = 0; j < this.weight[i].length; j++) {
 			if (this.weight[i][j] != NO_PATH) {
 				this.use[i][j] = OFF;
@@ -92,7 +92,7 @@ public class UflHeuristic extends Ufl {
 				// only calculate for no empty consumer to a facility
 				if (this.weight[i][j] != NO_PATH) {
 					this.use[i][j] = ON;
-					final float score = this.avaliate();
+					final double score = this.avaliate();
 					scores.get(j).add(score);
 					this.use[i][j] = OFF;
 				}

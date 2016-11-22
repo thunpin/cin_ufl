@@ -48,7 +48,6 @@ public class CreateOutput {
 				metrics[0][j] = MAX_PERCENT;
 			}
 			
-			
 			for (int j = 0; j < numberOfFacilities; j++) {
 				genValues(numberOfClients, lines, metrics);
 			}

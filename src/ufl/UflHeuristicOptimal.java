@@ -28,10 +28,10 @@ public class UflHeuristicOptimal extends UflHeuristic {
 				this.use[facilityIndex][i] = ON;
 			} else if (this.weight[facilityIndex][i] != NO_PATH) {
 				int oldFacilityIndex = this.consumerMap.get(i);
-				float score1 = this.avaliate();
+				double score1 = this.avaliate();
 				this.use[facilityIndex][i] = ON;
 				this.use[oldFacilityIndex][i] = OFF;
-				float score2 = this.avaliate();
+				double score2 = this.avaliate();
 				
 				if (score2 < score1) {
 					this.consumerMap.put(i, facilityIndex);
