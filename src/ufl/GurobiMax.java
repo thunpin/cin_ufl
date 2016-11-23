@@ -55,15 +55,13 @@ class GurobiMax {
 
 			GRBVar[] v = new GRBVar[clients];
 			for (int j = 0; j < clients; j++) {
-				v[j] = model.addVar(0, GRB.INFINITY, 0,
-						GRB.CONTINUOUS, "Open" + j);
+				v[j] = model.addVar(0, GRB.INFINITY, 0, GRB.CONTINUOUS, "Open" + j);
 			}
 
 			GRBVar[][] B = new GRBVar[facilities][clients];
 			for (int i = 0; i < facilities; i++) {
 				for (int j = 0; j < clients; j++) {
-					B[i][j] = model.addVar(0, GRB.INFINITY, 0,
-							GRB.CONTINUOUS, "Trans" + i + "." + j);
+					B[i][j] = model.addVar(0, GRB.INFINITY, 0, GRB.CONTINUOUS, "Trans" + i + "." + j);
 				}
 			}
 			

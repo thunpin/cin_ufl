@@ -1,45 +1,32 @@
 package ufl;
 
+import java.util.HashSet;
+
 public class UflHeuristicOptimal extends UflHeuristic {
 	public UflHeuristicOptimal(double[] facilities, double[] consumers, double[][] weight) {
 		super(facilities, consumers, weight);
 	}
 
 	@Override
-	protected void createClusters() {
-		while (freeConsumers != EMPTY) {
-			// create the clusters
-			int index = scores.get(0).getIndex();
-			
-			if (!this.consumerMap.containsKey(index)) {
-				int facilityIndex = getBestFacilityToOpen(index);
-				balance(facilityIndex);
-			}
-			
-			scores.remove(0);
-		}
-	}
+	protected int findMinimumFacilityCost(HashSet<Integer> tempFacilitiesCluster, boolean[] checkedFacilities,
+			double[][] x) {
+		double bestValue = Double.MAX_VALUE;
+		int facility = -1;
 
-	private void balance(int facilityIndex) {
-		for (int i = 0; i < this.consumers.length; i++) {
-			if (this.weight[facilityIndex][i] != NO_PATH && !this.consumerMap.containsKey(i)) {
-				freeConsumers--;
-				this.consumerMap.put(i, facilityIndex);
-				this.use[facilityIndex][i] = ON;
-			} else if (this.weight[facilityIndex][i] != NO_PATH) {
-				int oldFacilityIndex = this.consumerMap.get(i);
-				double score1 = this.avaliate();
-				this.use[facilityIndex][i] = ON;
-				this.use[oldFacilityIndex][i] = OFF;
-				double score2 = this.avaliate();
-				
-				if (score2 < score1) {
-					this.consumerMap.put(i, facilityIndex);
-				} else {
-					this.use[facilityIndex][i] = OFF;
-					this.use[oldFacilityIndex][i] = ON;
+		for (int f : tempFacilitiesCluster) {
+			double value = 0;
+			value = this.facilities[f];
+			for (int c = 0; c < this.consumers.length; c++) {
+				if (x[f][c] > 0) {
+					value += this.weight[f][c] * this.consumers[c];
 				}
 			}
+
+			if (value < bestValue) {
+				facility = f;
+			}
 		}
+
+		return facility;
 	}
 }

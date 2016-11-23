@@ -17,19 +17,16 @@ public class GurobiMin {
 		yS = new double[facilities];
 		solution = 0;
 	}
-	
-	public double getSolution()
-	{
+
+	public double getSolution() {
 		return this.solution;
 	}
-	
-	public double[][] getX()
-	{
+
+	public double[][] getX() {
 		return this.xS;
 	}
-	
-	public double[] getY()
-	{
+
+	public double[] getY() {
 		return this.yS;
 	}
 
@@ -66,8 +63,7 @@ public class GurobiMin {
 			GRBVar[][] x = new GRBVar[facilities][clients];
 			for (int j = 0; j < clients; ++j) {
 				for (int i = 0; i < facilities; ++i) {
-					x[i][j] = model.addVar(0, 1, d[i][j]*w[j], GRB.CONTINUOUS, "Trans" + i
-							+ "." + j);
+					x[i][j] = model.addVar(0, 1, d[i][j] * w[j], GRB.CONTINUOUS, "Trans" + i + "." + j);
 				}
 			}
 
@@ -81,7 +77,7 @@ public class GurobiMin {
 			for (int i = 0; i < facilities; i++) {
 				for (int j = 0; j < clients; j++) {
 					expr.addTerm(w[j] * d[i][j], x[i][j]);
-					
+
 				}
 				expr.addTerm(f[i], y[i]);
 			}
@@ -90,8 +86,7 @@ public class GurobiMin {
 
 			for (int i = 0; i < facilities; ++i) {
 				for (int j = 0; j < clients; ++j) {
-					model.addConstr(y[i], GRB.GREATER_EQUAL, x[i][j], "open_"
-							+ i + "_" + j);
+					model.addConstr(y[i], GRB.GREATER_EQUAL, x[i][j], "open_" + i + "_" + j);
 				}
 			}
 
@@ -105,18 +100,16 @@ public class GurobiMin {
 
 			// Use barrier to solve root relaxation
 			model.getEnv().set(GRB.IntParam.Method, GRB.METHOD_BARRIER);
-			
+
 			model.relax();
 
 			model.update();
 
-			
-			
 			// Solve
 			model.optimize();
 
 			solution = model.get(GRB.DoubleAttr.ObjVal);
-			
+
 			for (int i = 0; i < facilities; i++) {
 				yS[i] = y[i].get(GRB.DoubleAttr.X);
 			}
@@ -132,8 +125,7 @@ public class GurobiMin {
 			env.dispose();
 
 		} catch (GRBException e) {
-			System.out.println("Error code: " + e.getErrorCode() + ". "
-					+ e.getMessage());
+			System.out.println("Error code: " + e.getErrorCode() + ". " + e.getMessage());
 		}
 	}
 }

@@ -12,58 +12,67 @@ public class CreateOutput {
 	private final static int PERCENT_DECREASE = 20;
 	private final static int PERCENT = 100;
 	private final static int NO_PATH = 9999;
-	
+
 	public static void main(String[] args) throws IOException {
 		final int numberOfExamples = 100;
 		final int numberOfFacilities = Integer.parseInt(args[0]);
 		final int numberOfClients = Integer.parseInt(args[1]);
-		final String fileName = String.format("Projeto_UFL_tptfc_%sx%s_inputs.txt", numberOfFacilities, numberOfClients);
-		
+		final String fileName = String.format("Projeto_UFL_tptfc_%sx%s_inputs.txt", numberOfFacilities,
+				numberOfClients);
+
 		final List<String> lines = new LinkedList<>();
 		for (int i = 0; i < numberOfExamples; i++) {
 			lines.add(String.format("%s %s", numberOfFacilities, numberOfClients));
-			
+
 			// create the facilities price
 			genValues(numberOfFacilities, lines);
 			// create the clients demand
 			genValues(numberOfClients, lines);
 			// create the client weights
-			lines.addAll(genWeights(numberOfFacilities, numberOfClients));			
-			
+			lines.addAll(genWeights(numberOfFacilities, numberOfClients));
+
 			lines.add("");
 		}
 		lines.add("");
-		
+
 		new File("." + File.separator + fileName).createNewFile();
 		Files.write(Paths.get(fileName), lines);
 	}
-	
+
 	private static List<String> genWeights(int numberOfFacilities, int numberOfClients) {
 		List<String> lines = null;
-		
+
 		while (true) {
 			lines = new LinkedList<>();
 			int[][] metrics = new int[2][numberOfClients];
 			for (int j = 0; j < numberOfClients; j++) {
 				metrics[0][j] = MAX_PERCENT;
 			}
-			
+
+			boolean hasError = false;
 			for (int j = 0; j < numberOfFacilities; j++) {
-				genValues(numberOfClients, lines, metrics);
+				hasError = genValues(numberOfClients, lines, metrics);
+				if (hasError) {
+					break;
+				}
 			}
+			if (hasError) {
+				continue;
+			}
+
 			int total = 0;
 			for (int j = 0; j < numberOfClients; j++) {
 				total += metrics[1][j];
 			}
-			
+
 			if (total == numberOfClients) {
 				break;
 			}
 		}
-		
+
 		return lines;
 	}
-	
+
 	private static void genValues(int qtd, List<String> lines) {
 		final StringBuilder builder = new StringBuilder();
 		int value = genValue();
@@ -74,25 +83,30 @@ public class CreateOutput {
 		}
 		lines.add(builder.toString());
 	}
-	
-	private static void genValues(int qtd, List<String> lines, int[][]metrics) {
+
+	private static boolean genValues(int qtd, List<String> lines, int[][] metrics) {
+		int noPathTotal = 0;
 		final StringBuilder builder = new StringBuilder();
+
 		for (int j = 0; j < qtd; j++) {
 			int percent = new Random().nextInt(PERCENT);
 			if (percent > PERCENT - metrics[0][j]) {
 				metrics[0][j] = metrics[0][j] - PERCENT_DECREASE;
 				builder.append(NO_PATH);
+				noPathTotal++;
 			} else {
 				int valueJ = genValue();
 				builder.append(valueJ);
 				metrics[1][j] = 1;
 			}
-			
-			if (j < qtd-1) {
+
+			if (j < qtd - 1) {
 				builder.append(" ");
 			}
 		}
 		lines.add(builder.toString());
+
+		return noPathTotal == qtd;
 	}
 
 	private static int genValue() {
