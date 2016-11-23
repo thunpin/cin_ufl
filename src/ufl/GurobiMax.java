@@ -15,7 +15,7 @@ class GurobiMax {
 
 	public GurobiMax(int clients, int facilities) {
 		vS = new double[clients];
-		betaS = new double[clients][facilities];
+		betaS = new double[facilities][clients];
 		solution = 0;
 	}
 
@@ -54,19 +54,19 @@ class GurobiMax {
 			model.set(GRB.StringAttr.ModelName, "facility");
 
 			GRBVar[] v = new GRBVar[clients];
-			for (int j = 0; j < clients; ++j) {
+			for (int j = 0; j < clients; j++) {
 				v[j] = model.addVar(0, GRB.INFINITY, 0,
 						GRB.CONTINUOUS, "Open" + j);
 			}
 
-			GRBVar[][] B = new GRBVar[clients][facilities];
-			for (int i = 0; i < facilities; ++i) {
-				for (int j = 0; j < clients; ++j) {
-					B[j][i] = model.addVar(0, GRB.INFINITY, 0,
+			GRBVar[][] B = new GRBVar[facilities][clients];
+			for (int i = 0; i < facilities; i++) {
+				for (int j = 0; j < clients; j++) {
+					B[i][j] = model.addVar(0, GRB.INFINITY, 0,
 							GRB.CONTINUOUS, "Trans" + i + "." + j);
 				}
 			}
-
+			
 			// The objective is to maximize the total fixed and variable costs
 			model.set(GRB.IntAttr.ModelSense, -1);
 
@@ -78,27 +78,27 @@ class GurobiMax {
 			}
 			model.setObjective(expr, GRB.MAXIMIZE);
 
-			for (int i = 0; i < facilities; ++i) {
+			for (int i = 0; i < facilities; i++) {
 				GRBLinExpr expr2 = new GRBLinExpr();
-				for (int j = 0; j < clients; ++j) {
-					expr2.addTerm(1.0, B[j][i]);
+				for (int j = 0; j < clients; j++) {
+					expr2.addTerm(1.0, B[i][j]);
 				}
 				model.addConstr(expr2, GRB.LESS_EQUAL, f[i], "Covering_" + i);
 			}
 
-			for (int j = 0; j < clients; ++j) {
-				for (int i = 0; i < facilities; ++i) {
-					model.addConstr(B[j][i], GRB.GREATER_EQUAL, 0, "Cond_" + i
+			for (int i = 0; i < facilities; i++) {
+				for (int j = 0; j < clients; j++) {
+					model.addConstr(B[i][j], GRB.GREATER_EQUAL, 0, "Cond_" + i
 							+ "_" + j);
 				}
 			}
 
-			for (int j = 0; j < clients; ++j) {				
-				for (int i = 0; i < facilities; ++i) {
+			for (int i = 0; i < facilities; i++) {
+				for (int j = 0; j < clients; j++) {
 					GRBLinExpr expr3 = new GRBLinExpr();
 					expr3.addTerm(1.0, v[j]);
-					expr3.addTerm(-1.0, B[j][i]);
-					double value = w[j] * d[j][i];
+					expr3.addTerm(-1.0, B[i][j]);
+					double value = w[j] * d[i][j];
 					model.addConstr(expr3, GRB.LESS_EQUAL, value, "Close_" + i
 							+ "_" + j);
 				}
@@ -124,7 +124,7 @@ class GurobiMax {
 
 			for (int i = 0; i < facilities; i++) {
 				for (int j = 0; j < clients; ++j) {
-					betaS[j][i] = B[j][i].get(GRB.DoubleAttr.X);
+					betaS[i][j] = B[i][j].get(GRB.DoubleAttr.X);
 				}
 			}
 

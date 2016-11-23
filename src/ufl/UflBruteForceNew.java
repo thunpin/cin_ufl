@@ -44,15 +44,16 @@ public class UflBruteForceNew extends Ufl {
 			}
 			
 			if (conflicts.isEmpty()) {
-				continue;
-			} else {
 				double score = this.avaliate();
 				if (score <= minScore) {
 					minScore = score;
 					links = this.use.clone();
 				}
+				
+				continue;
 			}
 			
+			double bestLocalScore = Double.MAX_VALUE;
 			for (int j : conflicts) {
 				for (int i : subSet) {
 					if (this.weight[i][j] != NO_PATH) {
@@ -69,9 +70,8 @@ public class UflBruteForceNew extends Ufl {
 						this.use[i][j] = ON;
 						
 						double score = this.avaliate();
-						if (score <= minScore) {
-							minScore = score;
-							links = this.use.clone();
+						if (score <= bestLocalScore) {
+							bestLocalScore = score;
 							lastI = i;
 						} else {
 							if (lastI == -1) {
@@ -83,6 +83,12 @@ public class UflBruteForceNew extends Ufl {
 						}
 					}
 				}
+			}
+			
+			double score = this.avaliate();
+			if (score  <= minScore) {
+				minScore = score ;
+				links = this.use.clone();
 			}
 		}
 		

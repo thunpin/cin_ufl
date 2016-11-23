@@ -1,16 +1,13 @@
 package ufl;
 
-import java.io.PrintStream;
-import java.util.HashSet;
-
 public class UflHeuristicNew extends Ufl {
 	public UflHeuristicNew(double[] facilities, double[] consumers, double[][] weight) {
 		super(facilities, consumers, weight);
 	}
 	
-	public double heuristica(int graph, boolean improved, PrintStream out) {
+	@Override
+	public UflResult exec() {
 		boolean[] checkedConsumers = new boolean[this.consumers.length];
-		boolean[] checkedFacilities = new boolean[this.facilities.length];
 		
 		GurobiMax fMax = new GurobiMax(this.consumers.length, this.facilities.length);
 		fMax.gurobiFacilityMax(this.consumers, this.facilities, this.weight);
@@ -18,79 +15,75 @@ public class UflHeuristicNew extends Ufl {
 		GurobiMin fMin = new GurobiMin(this.consumers.length, this.facilities.length);
 		fMin.gurobiFacilityMin(this.consumers, this.facilities, this.weight);
 		
-		double v[] = fMax.getV();
-		double x[][] = fMin.getX();
+		double v[] = fMax.getV();		
+		int servedConsumers = 0;
+		while (servedConsumers < this.consumers.length) {
+			int index = findMinimumV(v, checkedConsumers);
 		
-		double newX[][] = new double[this.facilities.length][this.consumers.length];
-		double newY[] = new double[this.facilities.length];
-		
-		HashSet<Integer> servedClients = new HashSet<Integer>();
-		
-		while (servedClients.size() < this.consumers.length) {
-		
-			int minimumFacilityCost = 0;
-			int clientWithMinimumV = findMinimumV(v, checkedClients, x);
-		
-			HashSet<Integer> tempFacilitiesCluster = findFacilitieConnected(
-					clientWithMinimumV, x);
-			HashSet<Integer> tempClientsCluster = findClientsConnected(
-					tempFacilitiesCluster, x);
-		
-			if(!improved){
-				minimumFacilityCost = findMinimumFacilityCost(
-						tempFacilitiesCluster, checkedFacilities);
-			}
-			else{
-				minimumFacilityCost = findMinimumFacilityCostImproved(
-						tempFacilitiesCluster, checkedFacilities,x);	
-			}
-		
-			newY[minimumFacilityCost] = 1;
-			checkedFacilities[minimumFacilityCost] = true;
-		
-			for (int c : tempClientsCluster) {
-				newX[c][minimumFacilityCost] = 1;
-				checkedClients[c] = true;
-				servedClients.add(c);
+			int facilityIndex = getBestFacilityToOpen(index);
+			
+			for (int i = 0; i < this.consumers.length; i++) {
+				if (this.weight[facilityIndex][i] != NO_PATH && !checkedConsumers[i]) {
+					this.use[facilityIndex][i] = ON;
+					servedConsumers++;
+					checkedConsumers[i] = true;
+				}
 			}
 		}
 		
-		double cost = computeCost(newX, newY);
-		
-		printResultadoHeuristica(newX, newY, cost, graph, improved, out);
-		
-		return cost;
+		double score = this.avaliate();		
+		return createResult(score);
 	}
 	
-	private int findMinimumV(double[] v, boolean[] checkedClients, double[][] x) {
-
+	private int findMinimumV(double[] v, boolean[] checkedClients) {
 		double value = Double.MAX_VALUE;
 		int client = -1;
 
-		if (!improved) {
-			for (int i = 0; i < v.length; i++) {
-				if (value > v[i] && !checkedClients[i]) {
-					value = v[i];
-					client = i;
-				}
-			}
-			//System.out.println("menor valor cliente: "+value);
-		} else {
-			for (int i = 0; i < v.length; i++) {
-				double custoCliente = computeClientTransportCost(i, x);
-				if (value > (v[i] + custoCliente) && !checkedClients[i]) {
-					value = v[i] + custoCliente;
-					client = i;
-				}
+		for (int i = 0; i < v.length; i++) {
+			if (value > v[i] && !checkedClients[i]) {
+				value = v[i];
+				client = i;
 			}
 		}
 
 		return client;
 	}
-
-	@Override
-	public UflResult exec() {		
-		return this.createResult(this.avaliate());
+	
+	protected int getBestFacilityToOpen(int index) {
+		// find facility with the smallest cost
+		int facilityIndex = 0;
+		double facilityValue = Float.MAX_VALUE;
+		for (int i = 0; i < this.facilities.length; i++) {
+			if (this.weight[i][index] != NO_PATH) {
+				double maxFacilityValue = getMaxFacilityValue(i);
+				if (facilityValue > maxFacilityValue) {
+					facilityValue = maxFacilityValue;
+					facilityIndex = i;
+				}
+				
+			}
+		}
+		return facilityIndex;
 	}
-
+	
+	protected double getMaxFacilityValue(int i) {
+		int[][] tempUse = this.use.clone();
+		this.use = new int[this.facilities.length][this.consumers.length];
+		
+		for (int j = 0; j < this.weight[i].length; j++) {
+			if (this.weight[i][j] != NO_PATH) {
+				this.use[i][j] = ON;
+			}
+		}
+		
+		double currentFacilityValue = this.avaliate();
+		for (int j = 0; j < this.weight[i].length; j++) {
+			if (this.weight[i][j] != NO_PATH) {
+				this.use[i][j] = OFF;
+			}
+		}
+		this.use = tempUse.clone();
+		
+		return currentFacilityValue;
+	}
 }

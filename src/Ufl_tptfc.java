@@ -10,16 +10,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import ufl.UflBruteForceNew;
-import ufl.UflHeuristic;
+import ufl.UflHeuristicNew;
 import ufl.UflHeuristicOptimal;
 import ufl.UflResult;
 
 public class Ufl_tptfc {
 	public static void main(String[] args) throws IOException {
 		int seek = 1;
-		int[] facilities = null;
-		int[] consumers = null;
-		int[][] distance = null;
+		double[] facilities = null;
+		double[] consumers = null;
+		double[][] distance = null;
 		
 		double totalBruteForce = 0;
 		double totalHeuristic = 0;
@@ -54,13 +54,13 @@ public class Ufl_tptfc {
 				lines.add("-----------");
 				final UflResult resultBruteForce = new UflBruteForceNew(facilities, consumers, distance).exec();
 //				final UflResult resultBruteForce = new UflBruteForce(facilities, consumers, distance).exec();
-				final UflResult resultHeuristic = new UflHeuristic(facilities, consumers, distance).exec();
+				final UflResult resultHeuristic = new UflHeuristicNew(facilities, consumers, distance).exec();
+//				final UflResult resultHeuristicNew = new UflHeuristicNew(facilities, consumers, distance).exec();
+				
 				final UflResult resultHeuristicOptimal = new UflHeuristicOptimal(facilities, consumers, distance).exec();				
 				
 				lines.add("brute force:    ");
 				lines.add(resultBruteForce.toString());
-//				lines.add("brute force new:");
-//				lines.add(resultBruteForceNew.toString());
 				lines.add("heuristic:      ");
 				lines.add(resultHeuristic.toString());
 				lines.add("heuristic opt:  ");
@@ -80,7 +80,7 @@ public class Ufl_tptfc {
 			// read header number of facilities / consumers
 			if (seek == 1) {
 				String[] header = line.trim().split(" ");
-				distance = new int[Integer.parseInt(header[0])][];
+				distance = new double[Integer.parseInt(header[0])][];
 			} else if (seek == 2) {
 				facilities = buildArray(line);
 			} else if (seek == 3) {
@@ -108,13 +108,13 @@ public class Ufl_tptfc {
 		Files.write(Paths.get(fileNameOut), lines);
 	}
 
-	private static int[] buildArray(String line) {
+	private static double[] buildArray(String line) {
 		final String[] strValues = line.trim().split(" ");
-		final int[] array = new int[strValues.length];
+		final double[] array = new double[strValues.length];
 		
 		for (int i = 0; i < strValues.length; i++) {
 			final String strValue = strValues[i];
-			array[i] = Integer.parseInt(strValue);
+			array[i] = Double.parseDouble(strValue);
 		}
 		
 		return array;

@@ -85,18 +85,18 @@ public class UflHeuristic extends Ufl {
 		return currentFacilityValue;
 	}
 
-	protected void prepareScores() {
+	protected void prepareScores() {		
+		GurobiMax fMax = new GurobiMax(this.consumers.length, this.facilities.length);
+		fMax.gurobiFacilityMax(this.consumers, this.facilities, this.weight);
+		
+		GurobiMin fMin = new GurobiMin(this.consumers.length, this.facilities.length);
+		fMin.gurobiFacilityMin(this.consumers, this.facilities, this.weight);
+		
+		double v[] = fMax.getV();
+		
 		// prepare the score list
-		for (int i = 0; i < this.facilities.length; i++) {
-			for (int j = 0; j < this.consumers.length; j++) {
-				// only calculate for no empty consumer to a facility
-				if (this.weight[i][j] != NO_PATH) {
-					this.use[i][j] = ON;
-					final double score = this.avaliate();
-					scores.get(j).add(score);
-					this.use[i][j] = OFF;
-				}
-			}
+		for (int j = 0; j < v.length ; j++) {
+			scores.get(j).add(v[j]);
 		}
 		// sort the scores
 		scores.sort((score1, score2) -> {

@@ -13,7 +13,7 @@ public class GurobiMin {
 	private double yS[];
 
 	public GurobiMin(int clients, int facilities) {
-		xS = new double[clients][facilities];
+		xS = new double[facilities][clients];
 		yS = new double[facilities];
 		solution = 0;
 	}
@@ -63,10 +63,10 @@ public class GurobiMin {
 
 			// Transportation decision variables: how much to transport from
 			// a plant p to a warehouse w
-			GRBVar[][] x = new GRBVar[clients][facilities];
+			GRBVar[][] x = new GRBVar[facilities][clients];
 			for (int j = 0; j < clients; ++j) {
 				for (int i = 0; i < facilities; ++i) {
-					x[j][i] = model.addVar(0, 1, d[j][i]*w[j], GRB.CONTINUOUS, "Trans" + i
+					x[i][j] = model.addVar(0, 1, d[i][j]*w[j], GRB.CONTINUOUS, "Trans" + i
 							+ "." + j);
 				}
 			}
@@ -80,7 +80,7 @@ public class GurobiMin {
 			GRBLinExpr expr = new GRBLinExpr();
 			for (int i = 0; i < facilities; i++) {
 				for (int j = 0; j < clients; j++) {
-					expr.addTerm(w[j] * d[j][i], x[j][i]);
+					expr.addTerm(w[j] * d[i][j], x[i][j]);
 					
 				}
 				expr.addTerm(f[i], y[i]);
@@ -90,7 +90,7 @@ public class GurobiMin {
 
 			for (int i = 0; i < facilities; ++i) {
 				for (int j = 0; j < clients; ++j) {
-					model.addConstr(y[i], GRB.GREATER_EQUAL, x[j][i], "open_"
+					model.addConstr(y[i], GRB.GREATER_EQUAL, x[i][j], "open_"
 							+ i + "_" + j);
 				}
 			}
@@ -98,7 +98,7 @@ public class GurobiMin {
 			for (int j = 0; j < clients; ++j) {
 				expr = new GRBLinExpr();
 				for (int i = 0; i < facilities; ++i) {
-					expr.addTerm(1.0, x[j][i]);
+					expr.addTerm(1.0, x[i][j]);
 				}
 				model.addConstr(expr, GRB.EQUAL, 1, "Covering_" + j);
 			}
@@ -117,13 +117,13 @@ public class GurobiMin {
 
 			solution = model.get(GRB.DoubleAttr.ObjVal);
 			
-			for (int i = 0; i < facilities; ++i) {
+			for (int i = 0; i < facilities; i++) {
 				yS[i] = y[i].get(GRB.DoubleAttr.X);
 			}
 
 			for (int i = 0; i < facilities; i++) {
-				for (int j = 0; j < clients; ++j) {
-					xS[j][i] = x[j][i].get(GRB.DoubleAttr.X);
+				for (int j = 0; j < clients; j++) {
+					xS[i][j] = x[i][j].get(GRB.DoubleAttr.X);
 				}
 			}
 

@@ -9,7 +9,7 @@ public class Test {
 		System.out.println(date2.getTime()-date1.getTime());
 		
 		date1 = new Date();
-		int[] t = new int[33];
+		int[] t = new int[34];
 		a(t, 0);
 		date2 = new Date();
 		System.out.println(date2.getTime()-date1.getTime());
